@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Briefcase, Code, Award, User, Menu, X } from 'lucide-react';
-
+import { Github, Linkedin, Mail, ExternalLink, Briefcase, Code, Award,FileText, User, Menu, X } from 'lucide-react';
+import CertificatesSection from "./componants/Certificates.jsx";
+import ExperienceSection from "./componants/Experience.jsx";
+import EducationSection from "./componants/Education.jsx";
+export {EducationSection}
+export { CertificatesSection };
+export { ExperienceSection };
 export default function PremiumPortfolio() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,19 +16,28 @@ export default function PremiumPortfolio() {
             id: 1,
             title: "Intelli Wealth",
             category: "Full Stack",
-            description: "A modern AI-integrated Android app that helps users maintain their finances with ease.",
+            description: "A modern AI-integrated Android hosted app that helps users maintain their finances with ease.",
             tech: ["React", "Spring Boot", "PostgreSQL", "Docker", "Java"],
             image: "📊",
-            link: "#"
+            link: "https://github.com/Aakashch-code/Intelli-Wealth"
         },
         {
             id: 2,
             title: "Learn Quest",
-            category: "Full Stack",
+            category: "Full Stack (BaaS)",
             description: "A hackathon project hosted on a website designed to resolve issues in student preparation and bridge the gap between academia and industry.",
             tech: ["React", "Firebase"],
             image: "🤖",
-            link: "#"
+            link: "https://github.com/Aakashch-code/EduLens-AI"
+        },
+        {
+            id: 3,
+            title: "Subscription Manager",
+            category: "Full Stack",
+            description: "A full stack application to manage subscription from all places to one to resolve money waste issue",
+            tech: ["React", "Spring Boot", "PostgreSQL"],
+            image: "🎟️",
+            link: "https://github.com/Aakashch-code/Subscription-Manager"
         }
     ];
 
@@ -41,7 +55,7 @@ export default function PremiumPortfolio() {
         {
             category: "DevOps",
             icon: "🚀",
-            technologies: ["Docker", "GitHub Actions", "Oracle", "Render", "Netlify"]
+            technologies: ["Docker", "GitHub Actions", "Oracle Cloud Infrastructure", "Render", "Netlify"]
         },
         {
             category: "Database",
@@ -68,7 +82,24 @@ export default function PremiumPortfolio() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-zinc-100">
+        <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-zinc-100 relative overflow-hidden">
+            {/* Unified Background Layer */}
+            <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+                {/* Subtle radial overlay for depth */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-zinc-950 to-zinc-950"></div>
+                {/* Floating blurred orbs */}
+                <div className="absolute top-[10%] left-[10%] w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0s' }}></div>
+                <div className="absolute top-[20%] right-[10%] w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute bottom-[20%] left-[20%] w-72 h-72 bg-purple-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+                <div className="absolute bottom-[10%] right-[20%] w-64 h-64 bg-blue-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+                {/* Floating dots */}
+                <div className="absolute top-[25%] left-[25%] w-2 h-2 bg-purple-500/30 rounded-full animate-float"></div>
+                <div className="absolute top-[35%] right-[35%] w-1.5 h-1.5 bg-blue-500/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute bottom-[25%] left-[35%] w-1 h-1 bg-purple-500/40 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+                <div className="absolute top-[50%] right-[25%] w-1.5 h-1.5 bg-blue-500/40 rounded-full animate-float" style={{ animationDelay: '3s' }}></div>
+                <div className="absolute bottom-[40%] left-[10%] w-2 h-2 bg-purple-500/30 rounded-full animate-float" style={{ animationDelay: '5s' }}></div>
+            </div>
+
             {/* Navigation */}
             <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-zinc-900/80 border-b border-zinc-800/50">
                 <div className="max-w-7xl mx-auto px-6 py-4">
@@ -163,18 +194,8 @@ export default function PremiumPortfolio() {
             </nav>
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-zinc-950 to-zinc-950"></div>
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-500/30 rounded-full animate-float"></div>
-                    <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-blue-500/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-                    <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-purple-500/40 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-                </div>
-
-                <div className="max-w-7xl mx-auto text-center relative z-10">
+            <section className="relative pt-32 pb-20 px-6 z-10">
+                <div className="max-w-7xl mx-auto text-center relative">
                     <div
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-800/60 backdrop-blur-xl border border-zinc-700/50 mb-8 hover:border-green-500/50 transition-all duration-300 group cursor-default"
                         style={{ animation: 'fadeInDown 0.8s ease-out' }}
@@ -263,15 +284,24 @@ export default function PremiumPortfolio() {
                             <Mail size={24} className="relative z-10 text-zinc-400 group-hover/social:text-white group-hover/social:scale-110 transition-all duration-300" />
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover/social:translate-x-[200%] transition-transform duration-700"></div>
                         </a>
+                        <a
+                            href="/src/assets/my_resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/social relative p-3 rounded-xl bg-zinc-800/60 backdrop-blur-xl border border-zinc-700/50 hover:bg-zinc-800/80 hover:border-green-500/50 hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+                            aria-label="Resume"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-green-500/0 group-hover/social:from-green-500/20 group-hover/social:to-green-500/0 transition-all duration-300"></div>
+                            <FileText size={24} className="relative z-10 text-zinc-400 group-hover/social:text-white group-hover/social:scale-110 transition-all duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover/social:translate-x-[200%] transition-transform duration-700"></div>
+                        </a>
+
                     </div>
 
                     <div
                         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
                         style={{ animation: 'fadeInUp 1s ease-out 1s both, bounce 2s infinite 2s' }}
                     >
-                        <svg className="w-6 h-6 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
                     </div>
                 </div>
 
@@ -292,10 +322,8 @@ export default function PremiumPortfolio() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-12 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-blue-500/5 pointer-events-none"></div>
-
-                <div className="max-w-7xl mx-auto relative z-10">
+            <section className="py-12 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto relative">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {stats.map((stat, index) => (
                             <div
@@ -351,11 +379,8 @@ export default function PremiumPortfolio() {
             </section>
 
             {/* About Section */}
-            <section id="about" className="py-20 px-6 relative overflow-hidden">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-
-                <div className="max-w-7xl mx-auto relative z-10">
+            <section id="about" className="py-20 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto relative">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
                             About Me
@@ -431,12 +456,86 @@ export default function PremiumPortfolio() {
                 </div>
             </section>
 
-            {/* Projects Section */}
-            <section id="projects" className="py-20 px-6 relative overflow-hidden">
-                <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-1/3 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+            {/* Skills Section */}
+            <section id="skills" className="py-20 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto relative">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
+                            Skills & Expertise
+                        </h2>
+                        <p className="text-zinc-400 text-lg">Technologies I work with</p>
+                    </div>
 
-                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {skills.map((skill, index) => (
+                            <div
+                                key={index}
+                                className="group relative p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 hover:border-zinc-700/70 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
+                                style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both` }}
+                            >
+                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
+
+                                <div className="relative z-10">
+                                    <div className="flex flex-col items-center text-center mb-6">
+                                        <div className="relative mb-4">
+                                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                                            <span className="relative text-5xl transform group-hover:scale-110 transition-transform duration-500 inline-block">
+                                                {skill.icon}
+                                            </span>
+                                        </div>
+                                        <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors duration-300">
+                                            {skill.category}
+                                        </h3>
+                                    </div>
+
+                                    <div className="space-y-2.5">
+                                        {skill.technologies.map((tech, i) => (
+                                            <div
+                                                key={i}
+                                                className="relative group/tech"
+                                                style={{ animation: `slideInLeft 0.4s ease-out ${(index * 0.1) + (i * 0.05)}s both` }}
+                                            >
+                                                <div className="relative px-4 py-2 rounded-lg bg-zinc-800/40 border border-zinc-700/30 group-hover/tech:border-purple-500/50 transition-all duration-300 overflow-hidden">
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover/tech:translate-x-[200%] transition-transform duration-700"></div>
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover/tech:from-purple-500/10 group-hover/tech:to-blue-500/10 transition-all duration-300"></div>
+                                                    <div className="relative flex items-center justify-center gap-2">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover/tech:opacity-100 transition-all duration-300 group-hover/tech:shadow-lg group-hover/tech:shadow-purple-500/50"></span>
+                                                        <span className="text-sm font-medium text-zinc-300 group-hover/tech:text-transparent group-hover/tech:bg-gradient-to-r group-hover/tech:from-purple-400 group-hover/tech:to-blue-400 group-hover/tech:bg-clip-text transition-all duration-300">
+                                                            {tech}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <style jsx>{`
+                    @keyframes fadeInUp {
+                        from { opacity: 0; transform: translateY(30px); }
+                        to { opacity: 1; transform: translateY(0); }
+                    }
+                    @keyframes slideInLeft {
+                        from { opacity: 0; transform: translateX(-10px); }
+                        to { opacity: 1; transform: translateX(0); }
+                    }
+                `}</style>
+            </section>
+
+            {/*{Experience Section}*/}
+            <div>
+                <ExperienceSection />
+            </div>
+
+            {/* Projects Section */}
+            <section id="projects" className="py-20 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto relative">
                     <div className="flex items-center justify-between mb-16">
                         <div>
                             <h2 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
@@ -528,86 +627,19 @@ export default function PremiumPortfolio() {
                 `}</style>
             </section>
 
-            {/* Skills Section */}
-            <section id="skills" className="py-20 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent pointer-events-none"></div>
+            {/*{Education Section}*/}
+            <div>
+                <EducationSection />
+            </div>
 
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-zinc-400 bg-clip-text text-transparent">
-                            Skills & Expertise
-                        </h2>
-                        <p className="text-zinc-400 text-lg">Technologies I work with</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {skills.map((skill, index) => (
-                            <div
-                                key={index}
-                                className="group relative p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 hover:border-zinc-700/70 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
-                                style={{ animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both` }}
-                            >
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
-
-                                <div className="relative z-10">
-                                    <div className="flex flex-col items-center text-center mb-6">
-                                        <div className="relative mb-4">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                                            <span className="relative text-5xl transform group-hover:scale-110 transition-transform duration-500 inline-block">
-                                                {skill.icon}
-                                            </span>
-                                        </div>
-                                        <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors duration-300">
-                                            {skill.category}
-                                        </h3>
-                                    </div>
-
-                                    <div className="space-y-2.5">
-                                        {skill.technologies.map((tech, i) => (
-                                            <div
-                                                key={i}
-                                                className="relative group/tech"
-                                                style={{ animation: `slideInLeft 0.4s ease-out ${(index * 0.1) + (i * 0.05)}s both` }}
-                                            >
-                                                <div className="relative px-4 py-2 rounded-lg bg-zinc-800/40 border border-zinc-700/30 group-hover/tech:border-purple-500/50 transition-all duration-300 overflow-hidden">
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover/tech:translate-x-[200%] transition-transform duration-700"></div>
-                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover/tech:from-purple-500/10 group-hover/tech:to-blue-500/10 transition-all duration-300"></div>
-                                                    <div className="relative flex items-center justify-center gap-2">
-                                                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover/tech:opacity-100 transition-all duration-300 group-hover/tech:shadow-lg group-hover/tech:shadow-purple-500/50"></span>
-                                                        <span className="text-sm font-medium text-zinc-300 group-hover/tech:text-transparent group-hover/tech:bg-gradient-to-r group-hover/tech:from-purple-400 group-hover/tech:to-blue-400 group-hover/tech:bg-clip-text transition-all duration-300">
-                                                            {tech}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <style jsx>{`
-                    @keyframes fadeInUp {
-                        from { opacity: 0; transform: translateY(30px); }
-                        to { opacity: 1; transform: translateY(0); }
-                    }
-                    @keyframes slideInLeft {
-                        from { opacity: 0; transform: translateX(-10px); }
-                        to { opacity: 1; transform: translateX(0); }
-                    }
-                `}</style>
-            </section>
+            {/*{Certificate Section}*/}
+            <div>
+                <CertificatesSection />
+            </div>
 
             {/* Contact Section */}
-            <section id="contact" className="py-20 px-6 relative overflow-hidden">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-
-                <div className="max-w-3xl mx-auto relative z-10">
+            <section id="contact" className="py-20 px-6 relative z-10">
+                <div className="max-w-3xl mx-auto relative">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
                             Get In Touch
@@ -722,7 +754,7 @@ export default function PremiumPortfolio() {
             </section>
 
             {/* Footer */}
-            <footer className="py-8 px-6 border-t border-zinc-700/50">
+            <footer className="py-8 px-6 border-t border-zinc-700/50 relative z-10">
                 <div className="max-w-7xl mx-auto text-center text-zinc-400">
                     <p>© 2025 Portfolio. All rights reserved.</p>
                 </div>
