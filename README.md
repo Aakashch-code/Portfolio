@@ -1,16 +1,41 @@
-# React + Vite
+# Hi, I'm Aakash Chauhan 👋
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full Stack Developer specializing in Spring Boot and modern web technologies.
 
-Currently, two official plugins are available:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aakashch-code)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:aakashch.code@gmail.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## React Compiler
+**Frontend:** React • Tailwind CSS • JavaScript • HTML • CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Backend:** Spring Boot • Spring Framework • Java
 
-## Expanding the ESLint configuration
+**Databases:** PostgreSQL • MySQL • MongoDB • Firebase
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**DevOps:** Docker • GitHub Actions • Oracle Cloud • Render • Netlify
+
+## 🚀 Featured Projects
+
+### [Intelli Wealth](https://github.com/Aakashch-code/Intelli-Wealth)
+AI-integrated Android app for personal finance management
+* **Stack:** React, Spring Boot, PostgreSQL, Docker, Java
+
+### [Subscription Manager](https://github.com/Aakashch-code/Subscription-Manager)
+Full-stack application to manage and track subscriptions
+* **Stack:** React, Spring Boot, PostgreSQL
+
+### [EduLens-AI](https://github.com/Aakashch-code/EduLens-AI)
+AI-driven education platform - Smart India Hackathon 2025 Winner
+* **Stack:** React, Firebase, Android Studio
+
+## 🏆 Highlights
+
+* **SIH 2025 Winner** - Led team of 6, competed against 140+ teams
+* **Oracle Certified** - Cloud Infrastructure Developer & AI Professional
+* **5+ Projects** - Production-ready full-stack applications
+
+## 🎓 Education
+
+**B.E. in Electronics & Telecommunications**  
+Terna Engineering College, Navi Mumbai (2024 - Present)
