@@ -3,9 +3,12 @@ import { Github, Linkedin, Mail, ExternalLink, Briefcase, Code, Award,FileText, 
 import CertificatesSection from "./componants/Certificates.jsx";
 import ExperienceSection from "./componants/Experience.jsx";
 import EducationSection from "./componants/Education.jsx";
+import Contact from "./componants/Contact.jsx";
+import ContactSection from "./componants/Contact.jsx";
 export {EducationSection}
-export { CertificatesSection };
-export { ExperienceSection };
+export { CertificatesSection }
+export { ExperienceSection }
+export {Contact}
 export default function PremiumPortfolio() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -536,16 +539,17 @@ export default function PremiumPortfolio() {
             {/* Projects Section */}
             <section id="projects" className="py-20 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto relative">
-                    <div className="flex items-center justify-between mb-16">
-                        <div>
-                            <h2 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                                Featured Projects
-                            </h2>
-                            <p className="text-zinc-400 text-lg">A selection of my recent work</p>
-                        </div>
+                    <div className="flex flex-col items-center justify-center text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
+                            Featured Projects
+                        </h2>
+                        <p className="text-zinc-400 text-lg">
+                            A selection of my recent work
+                        </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.map((project, index) => (
                             <div
                                 key={project.id}
@@ -637,122 +641,10 @@ export default function PremiumPortfolio() {
                 <CertificatesSection />
             </div>
 
-            {/* Contact Section */}
-            <section id="contact" className="py-20 px-6 relative z-10">
-                <div className="max-w-3xl mx-auto relative">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                            Get In Touch
-                        </h2>
-                        <p className="text-zinc-400 text-lg">Let's work together on your next project</p>
-                    </div>
 
-                    <div className="group relative p-8 rounded-3xl bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 hover:border-zinc-700/70 transition-all duration-500 shadow-2xl shadow-purple-500/5">
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-                        <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
-                            <div className="group/input">
-                                <label className="block text-sm font-semibold text-zinc-400 mb-3 uppercase tracking-wider flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></span>
-                                    Name
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        value={formData.name}
-                                        onChange={handleFormChange}
-                                        className="w-full px-5 py-4 rounded-xl bg-zinc-800/60 border border-zinc-700/50 focus:border-purple-500/50 focus:outline-none transition-all duration-300 focus:bg-zinc-800/80 focus:shadow-lg focus:shadow-purple-500/10 placeholder:text-zinc-500"
-                                        placeholder="Your name"
-                                        required
-                                    />
-                                    <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-focus-within/input:w-full"></div>
-                                </div>
-                            </div>
-
-                            <div className="group/input">
-                                <label className="block text-sm font-semibold text-zinc-400 mb-3 uppercase tracking-wider flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></span>
-                                    Email
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleFormChange}
-                                        className="w-full px-5 py-4 rounded-xl bg-zinc-800/60 border border-zinc-700/50 focus:border-purple-500/50 focus:outline-none transition-all duration-300 focus:bg-zinc-800/80 focus:shadow-lg focus:shadow-purple-500/10 placeholder:text-zinc-500"
-                                        placeholder="your@email.com"
-                                        required
-                                    />
-                                    <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-focus-within/input:w-full"></div>
-                                </div>
-                            </div>
-
-                            <div className="group/input">
-                                <label className="block text-sm font-semibold text-zinc-400 mb-3 uppercase tracking-wider flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></span>
-                                    Message
-                                </label>
-                                <div className="relative">
-                                    <textarea
-                                        name="message"
-                                        rows="5"
-                                        value={formData.message}
-                                        onChange={handleFormChange}
-                                        className="w-full px-5 py-4 rounded-xl bg-zinc-800/60 border border-zinc-700/50 focus:border-purple-500/50 focus:outline-none transition-all duration-300 focus:bg-zinc-800/80 focus:shadow-lg focus:shadow-purple-500/10 resize-none placeholder:text-zinc-500"
-                                        placeholder="Tell me about your project..."
-                                        required
-                                    ></textarea>
-                                    <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-300 group-focus-within/input:w-full"></div>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-4 pt-4">
-                                <button
-                                    type="submit"
-                                    className="group/btn flex-1 relative px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-1"
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
-                                    <span className="relative flex items-center justify-center gap-2">
-                                        Send Message
-                                        <svg className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </span>
-                                </button>
-
-                                <button
-                                    type="button"
-                                    className="group/cancel px-8 py-4 rounded-xl bg-zinc-800/60 backdrop-blur-xl border border-zinc-700/50 hover:bg-zinc-800/80 hover:border-zinc-600/50 transition-all duration-300 font-medium text-zinc-300 hover:text-white"
-                                    onClick={() => setFormData({ name: '', email: '', message: '' })}
-                                >
-                                    Cancel
-                                </button>
-                            </div>
-
-                            <div className="flex items-center justify-center gap-6 pt-6 text-sm text-zinc-500">
-                                <div className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                    </svg>
-                                    <span>Fast Response</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                    </svg>
-                                    <span>Secure & Private</span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-2xl pointer-events-none"></div>
-                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
-                </div>
-            </section>
-
+            <div>
+                <ContactSection />
+            </div>
             {/* Footer */}
             <footer className="py-8 px-6 border-t border-zinc-700/50 relative z-10">
                 <div className="max-w-7xl mx-auto text-center text-zinc-400">
@@ -762,52 +654,95 @@ export default function PremiumPortfolio() {
 
             {/* Project Modal */}
             {selectedProject && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-md" onClick={() => setSelectedProject(null)}>
-                    <div className="w-full max-w-2xl p-8 rounded-2xl bg-zinc-900/95 backdrop-blur-xl border border-zinc-700/50" onClick={(e) => e.stopPropagation()}>
-                        <div className="flex items-start justify-between mb-6">
-                            <div className="text-5xl">{selectedProject.image}</div>
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/70 backdrop-blur-md"
+                    onClick={() => setSelectedProject(null)}
+                >
+                    <div
+                        className="group/modal relative w-full max-w-2xl p-8 rounded-2xl bg-zinc-900/95 backdrop-blur-xl border border-zinc-700/50 hover:border-zinc-600/50 transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/20 overflow-hidden"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Background gradients and shimmer */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover/modal:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover/modal:translate-x-[200%] transition-transform duration-1000"></div>
+
+                        {/* Corner accents */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover/modal:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-tr-full opacity-0 group-hover/modal:opacity-100 transition-opacity duration-500"></div>
+
+                        <div className="relative z-10 flex items-start justify-between mb-6">
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-blue-500/30 rounded-2xl blur-xl opacity-0 group-hover/modal:opacity-100 transition-opacity duration-500"></div>
+                                <div className="relative text-5xl transform group-hover/modal:scale-110 group-hover/modal:rotate-6 transition-all duration-500">
+                                    {selectedProject.image}
+                                </div>
+                            </div>
+
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="p-2 rounded-xl bg-zinc-800/80 hover:bg-zinc-800 transition-colors"
+                                className="group/close relative p-2 rounded-xl bg-zinc-800/80 border border-zinc-700/50 hover:bg-zinc-800 hover:border-purple-500/50 transition-all duration-300 hover:scale-110 hover:rotate-12 overflow-hidden"
                             >
-                                <X size={20} />
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-blue-500/0 group-hover/close:from-purple-500/20 group-hover/close:to-blue-500/20 transition-all duration-300"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover/close:translate-x-[200%] transition-transform duration-700"></div>
+                                <X size={20} className="relative text-zinc-400 group-hover/close:text-white transition-colors duration-300" />
                             </button>
                         </div>
 
-                        <h3 className="text-3xl font-bold mb-2">{selectedProject.title}</h3>
-                        <span className="inline-block px-3 py-1 rounded-full text-sm bg-zinc-800 text-zinc-400 mb-6">
-                            {selectedProject.category}
-                        </span>
+                        <h3 className="text-3xl font-bold mb-2 group-hover/modal:text-transparent group-hover/modal:bg-gradient-to-r group-hover/modal:from-purple-300 group-hover/modal:to-blue-300 group-hover/modal:bg-clip-text transition-all duration-500">
+                            {selectedProject.title}
+                        </h3>
 
-                        <p className="text-zinc-400 mb-6 leading-relaxed">
+                        <div className="inline-block relative group/badge mb-6">
+                <span className="inline-block px-3 py-1 rounded-full text-sm font-medium bg-zinc-800/60 border border-zinc-700/50 text-zinc-400 group-hover/badge:border-purple-500/50 group-hover/badge:text-purple-300 transition-all duration-300">
+                    {selectedProject.category}
+                </span>
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur opacity-0 group-hover/badge:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+
+                        <p className="text-zinc-400 mb-6 leading-relaxed group-hover/modal:text-zinc-300 transition-colors duration-300">
                             {selectedProject.description}
                         </p>
 
-                        <div className="mb-6">
-                            <h4 className="text-sm font-semibold text-zinc-400 mb-3 uppercase tracking-wider">
+                        <div className="mb-6 relative group/section">
+                            <h4 className="text-sm font-semibold text-zinc-400 mb-3 uppercase tracking-wider group-hover/section:text-purple-300 transition-colors duration-300">
                                 Technologies Used
                             </h4>
                             <div className="flex flex-wrap gap-2">
                                 {selectedProject.tech.map((tech, i) => (
-                                    <span key={i} className="px-3 py-2 rounded-lg bg-zinc-800/80 text-sm">
-                                        {tech}
-                                    </span>
+                                    <span
+                                        key={i}
+                                        className="group/tech relative px-3 py-2 rounded-lg bg-zinc-800/80 border border-zinc-700/30 text-sm font-medium text-zinc-400 hover:border-purple-500/40 hover:text-purple-300 transition-all duration-300 overflow-hidden cursor-default"
+                                    >
+                            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover/tech:translate-x-[200%] transition-transform duration-700"></span>
+                            <span className="absolute inset-0 bg-gradient-to-r from-purple-500/0 to-blue-500/0 group-hover/tech:from-purple-500/10 group-hover/tech:to-blue-500/10 transition-all duration-300"></span>
+                            <span className="relative">{tech}</span>
+                        </span>
                                 ))}
+                            </div>
+                            <div className="mt-4 h-1 bg-zinc-800/50 rounded-full overflow-hidden">
+                                <div className="h-full bg-gradient-to-r from-purple-500 to-blue-500 rounded-full transform scale-x-0 group-hover/section:scale-x-100 transition-transform duration-700 origin-left shadow-lg shadow-purple-500/50"></div>
                             </div>
                         </div>
 
                         <div className="flex gap-4">
                             <a
                                 href={selectedProject.link}
-                                className="flex-1 px-6 py-3 rounded-xl bg-zinc-100 text-black font-semibold hover:bg-zinc-200 transition-all text-center"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group/btn flex-1 relative px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-1 hover:scale-105 text-center"
                             >
-                                View Project
+                                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></span>
+                                <span className="relative flex items-center justify-center gap-2">
+                        View Project
+                        <ExternalLink size={16} className="transform group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </span>
                             </a>
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="px-6 py-3 rounded-xl bg-zinc-800/80 backdrop-blur-xl border border-zinc-700/50 hover:bg-zinc-800 transition-all"
+                                className="group/close px-6 py-3 rounded-xl bg-zinc-800/80 backdrop-blur-xl border border-zinc-700/50 hover:bg-zinc-800 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1 font-medium text-zinc-300 hover:text-white overflow-hidden"
                             >
-                                Close
+                                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-blue-500/0 group-hover/close:from-purple-500/20 group-hover/close:to-blue-500/20 transition-all duration-300"></div>
+                                <span className="relative">Close</span>
                             </button>
                         </div>
                     </div>

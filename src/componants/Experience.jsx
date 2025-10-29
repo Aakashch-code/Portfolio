@@ -33,14 +33,8 @@ const ExperienceSection = () => {
     const isOpen = (id) => openItems.has(id);
 
     return (
-        <section className="relative min-h-screen bg-zinc-950 py-20 overflow-hidden">
-            {/* Animated Background Orbs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full blur-3xl animate-bounce [animation-delay:1s]" />
-            </div>
-
-            <div className="relative container mx-auto px-6 max-w-6xl">
+        <section className="relative py-20 px-6 z-10">
+            <div className="relative container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-200 via-purple-200 to-blue-200 bg-clip-text text-transparent mb-4 group">
