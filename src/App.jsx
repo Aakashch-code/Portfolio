@@ -12,7 +12,6 @@ export {Contact}
 export default function PremiumPortfolio() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
     const projects = [
         {
@@ -73,16 +72,6 @@ export default function PremiumPortfolio() {
         { label: "TECHNOLOGIES", value: "15+", icon: Code }
     ];
 
-    const handleFormChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission (e.g., send to API)
-        console.log('Form submitted:', formData);
-        setFormData({ name: '', email: '', message: '' });
-    };
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-zinc-100 relative overflow-hidden">
@@ -288,7 +277,7 @@ export default function PremiumPortfolio() {
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover/social:translate-x-[200%] transition-transform duration-700"></div>
                         </a>
                         <a
-                            href="/src/assets/my_resume.pdf"
+                            href="/my_resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group/social relative p-3 rounded-xl bg-zinc-800/60 backdrop-blur-xl border border-zinc-700/50 hover:bg-zinc-800/80 hover:border-green-500/50 hover:-translate-y-2 transition-all duration-300 overflow-hidden"
@@ -439,7 +428,7 @@ export default function PremiumPortfolio() {
                                 </div>
 
                                 <div className="flex flex-wrap gap-3 pt-4">
-                                    {['Backend Expert', 'Spring Boot', 'Problem Solver', 'Open Source'].map((tag, index) => (
+                                    {['Backend Focused', 'Spring Boot', 'Problem Solver'].map((tag, index) => (
                                         <span
                                             key={index}
                                             className="group/tag relative px-4 py-2 rounded-lg bg-zinc-800/60 border border-zinc-700/50 text-sm text-zinc-300 hover:text-white hover:border-purple-500/50 transition-all duration-300 overflow-hidden cursor-default"
