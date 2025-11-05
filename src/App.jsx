@@ -19,7 +19,7 @@ export default function PremiumPortfolio() {
             title: "Intelli Wealth",
             category: "Full Stack",
             description: "A modern AI-integrated Android hosted app that helps users maintain their finances with ease.",
-            tech: ["React", "Spring Boot", "PostgreSQL", "Docker", "Java"],
+            tech: ["Java" , "Spring Boot", "PostgreSQL", "Docker", "React"],
             image: "📊",
             link: "https://github.com/Aakashch-code/Intelli-Wealth"
         },
@@ -28,7 +28,7 @@ export default function PremiumPortfolio() {
             title: "Learn Quest",
             category: "Full Stack (BaaS)",
             description: "A hackathon project hosted on a website designed to resolve issues in student preparation and bridge the gap between academia and industry.",
-            tech: ["React", "Firebase"],
+            tech: ["Firebase","React" ],
             image: "🤖",
             link: "https://github.com/Aakashch-code/EduLens-AI"
         },
@@ -37,7 +37,7 @@ export default function PremiumPortfolio() {
             title: "Subscription Manager",
             category: "Full Stack",
             description: "A full stack application to manage subscription from all places to one to resolve money waste issue",
-            tech: ["React", "Spring Boot", "PostgreSQL"],
+            tech: ["Spring Boot","PostgreSQL", "React"],
             image: "🎟️",
             link: "https://github.com/Aakashch-code/Subscription-Manager"
         }
@@ -45,24 +45,24 @@ export default function PremiumPortfolio() {
 
     const skills = [
         {
-            category: "Frontend Development",
+            category: "Frontend Development (Basics)",
             icon: "💻",
             technologies: ["React", "Tailwind CSS", "HTML", "CSS", "JavaScript"]
         },
         {
             category: "Backend Development",
             icon: "⚙️",
-            technologies: ["Spring Boot", "Spring Framework"]
+            technologies: ["Spring Boot", "Firebase"]
         },
         {
-            category: "DevOps",
+            category: "DevOps & Platform",
             icon: "🚀",
             technologies: ["Docker", "GitHub Actions", "Oracle Cloud Infrastructure", "Render", "Netlify"]
         },
         {
             category: "Database",
             icon: "🗄️",
-            technologies: ["MongoDB", "PostgreSQL", "MySQL"]
+            technologies: ["PostgreSQL", "MySQL"]
         }
     ];
 
@@ -203,7 +203,7 @@ export default function PremiumPortfolio() {
                         className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent leading-tight"
                         style={{ animation: 'fadeInUp 1s ease-out 0.2s both' }}
                     >
-                        Full Stack Developer
+                        Backend Developer
                     </h1>
 
                     <p
