@@ -1,41 +1,81 @@
-# Hi, I'm Aakash Chauhan 👋
+# 👨‍💻 Aakash Chauhan | Backend Developer
 
-Full Stack Developer specializing in Spring Boot and modern web technologies.
+> *"Architecting the logic behind the screen. I build scalable Spring Boot microservices and robust database systems that power seamless user experiences."*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aakashch-code)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:aakashch.code@gmail.com)
+## 🚀 About Me
+Hi, I'm **Aakash Chauhan**, a passionate Backend Developer based in Mumbai. Currently pursuing my Bachelor of Engineering in Electronics and Telecommunications at Terna Engineering College (2024-Present).
+
+I am a **Fresher** with hands-on experience in modern technologies. I specialize in backend architecture, working comfortably with **Spring Boot** and cloud infrastructure. I am constantly learning and adapting to new industry trends.
+
+* **Experience:** 3+ Projects Completed
+* **Technologies:** 20+ Tools & Frameworks
+* **Focus:** Scalable Systems, API Design, and Cloud Architecture
+
+---
 
 ## 🛠️ Tech Stack
 
-**Frontend:** React • Tailwind CSS • JavaScript • HTML • CSS
+### **Backend Development**
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Spring Security](https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=spring-security&logoColor=white)
+![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white)
+![REST APIs](https://img.shields.io/badge/REST_APIs-005571?style=for-the-badge&logo=openapi-initiative&logoColor=white)
 
-**Backend:** Spring Boot • Spring Framework • Java
+### **Database**
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
-**Databases:** PostgreSQL • MySQL • MongoDB • Firebase
+### **DevOps & Cloud**
+![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-F80000?style=for-the-badge&logo=oracle&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
 
-**DevOps:** Docker • GitHub Actions • Oracle Cloud • Render • Netlify
+### **Tools & Testing**
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![JUnit](https://img.shields.io/badge/JUnit5-25A162?style=for-the-badge&logo=junit5&logoColor=white)
+![Mockito](https://img.shields.io/badge/Mockito-8D6E63?style=for-the-badge&logo=mockito&logoColor=white)
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white)
 
-## 🚀 Featured Projects
+---
 
-### [Intelli Wealth](https://github.com/Aakashch-code/Intelli-Wealth)
-AI-integrated Android app for personal finance management
-* **Stack:** React, Spring Boot, PostgreSQL, Docker, Java
+## 🏆 Achievements & Certifications
 
-### [Subscription Manager](https://github.com/Aakashch-code/Subscription-Manager)
-Full-stack application to manage and track subscriptions
-* **Stack:** React, Spring Boot, PostgreSQL
+### **Hackathons**
+* 🥇 **Internal Hackathon Winner** - Smart India Hackathon (SIH-2025) | *Sept 2025*
 
-### [EduLens-AI](https://github.com/Aakashch-code/EduLens-AI)
-AI-driven education platform - Smart India Hackathon 2025 Winner
-* **Stack:** React, Firebase, Android Studio
+### **Oracle Cloud Certifications**
+I hold multiple professional certifications demonstrating expertise in Cloud Infrastructure and AI:
+* 📜 **Oracle Cloud Infrastructure 2025 Certified Generative AI Professional**
+* 📜 **Oracle Cloud Infrastructure 2025 Certified Developer Professional**
+* 📜 **Oracle AI Vector Search Certified Professional 2025**
+* 📜 **Oracle Fusion AI Agent Studio Fusion Agent Associate - Rel 1**
+* 📜 **Oracle Cloud Infrastructure 2025 Certified Foundations Associate**
 
-## 🏆 Highlights
+---
 
-* **SIH 2025 Winner** - Led team of 6, competed against 140+ teams
-* **Oracle Certified** - Cloud Infrastructure Developer & AI Professional
-* **5+ Projects** - Production-ready full-stack applications
+## 📂 Featured Projects
 
-## 🎓 Education
+### 1. [Intelli Wealth Engine](https://github.com/Aakashch-code/intelliwealth-api)
+**Tech:** Spring Boot, JWT, Financial Data API
+* Engineered a high-throughput Spring Boot backend.
+* Implemented JWT authentication ensuring secure data transmission for sensitive financial records.
 
-**B.E. in Electronics & Telecommunications**  
-Terna Engineering College, Navi Mumbai (2024 - Present)
+### 3. [Subscription Manager](https://github.com/Aakashch-code/Subscription-Manager)
+**Tech:** Spring Boot, Automation
+* Developed a backend system to automate billing alerts.
+* Implemented automated payment reminders for users.
+
+---
+
+## 📫 Connect with Me
+
+* **Email:** [aakashch.code@gmail.com](mailto:aakashch.code@gmail.com)
+* **LinkedIn:** [linkedin.com/in/aakashch-code](https://www.linkedin.com/in/aakashch-code)
+* **GitHub:** [github.com/Aakashch-code](https://github.com/Aakashch-code)
+
+---
+© 2025 Aakash Chauhan. All rights reserved.
