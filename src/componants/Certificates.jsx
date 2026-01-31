@@ -68,7 +68,8 @@ const CertificatesSection = () => {
     const isOpen = (id) => openItems.has(id);
 
     return (
-        <section className="relative py-20 px-6 z-10">
+        <section id="certificates"
+                 className="relative py-20 px-6 z-10">
             <div className="relative container mx-auto max-w-6xl">
                 {/* Section Header */}
                 <div className="text-center mb-16">
