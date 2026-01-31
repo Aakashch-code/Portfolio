@@ -23,7 +23,7 @@ const AboutSection = () => {
                                 <p>
                                     I'm a backend-focused developer working primarily with
                                     Java 21 and Spring Boot 3, with hands-on experience building
-                                    real-world backend systems and REST APIs.
+                                    complex backend systems and REST APIs.
                                 </p>
                                 <p>
                                     I’m comfortable across the full stack when needed — using

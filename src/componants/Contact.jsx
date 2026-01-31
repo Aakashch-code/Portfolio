@@ -93,7 +93,7 @@ const ContactSection = () => {
                                     value={formData.email}
                                     onChange={handleFormChange}
                                     className="w-full px-5 py-4 rounded-xl bg-zinc-800/60 border border-zinc-700/50 focus:border-purple-500/50 focus:outline-none transition-all duration-300 focus:bg-zinc-800/80 focus:shadow-lg focus:shadow-purple-500/10 placeholder:text-zinc-500"
-                                    placeholder="your@email.com"
+                                    placeholder="name@example.com"
                                     required
                                     disabled={isSubmitting}
                                 />

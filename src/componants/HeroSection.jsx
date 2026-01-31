@@ -111,8 +111,7 @@ const HeroSection = () => {
                     </h1>
 
                     <p className="text-xl text-zinc-400 mb-8 max-w-lg leading-relaxed">
-                        Architecting the logic behind the screen. I build scalable <span className="text-zinc-200 font-semibold">Spring Boot</span> microservices and robust database systems that power seamless user experiences.
-                    </p>
+                        Architecting the logic behind the screen. I build resilient <span className="text-zinc-200 font-semibold">Spring Boot backends</span> and robust database systems that ensure data integrity and security.</p>
 
                     {/* Primary Actions */}
                     <div className="flex flex-wrap gap-4 mb-12">
