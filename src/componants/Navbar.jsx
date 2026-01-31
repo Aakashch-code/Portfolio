@@ -7,7 +7,7 @@ const Navbar = () => {
     const navItems = [
         { href: '#about', label: 'About', icon: '👤' },
         { href: '#skills', label: 'Skills', icon: '⚡' },
-        { href: '#experience', label: 'Experience', icon: '👔' },
+        { href: '#hackathons', label: 'Hackathon', icon: '👔' },
         { href: '#projects', label: 'Projects', icon: '💼' },
         { href: '#education', label: 'Education', icon: '🎓' },
         { href: '#certificates', label: 'Certificates', icon: '🏅' },

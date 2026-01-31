@@ -11,12 +11,12 @@ const HackathonSection = () => {
 
     const hackathons = [
         {
-            id: 2,
-            title: 'Smart India Hackathon (SIH) 2025 – Winning Team',
-            organizer: 'Government of India',
-            date: 'September 2025',
+            id: 1,
+            title: 'Team Leader – Smart India Hackathon (SIH) 2025 (Shortlisted)',
+            organizer: 'Smart India Hackathon | Government of India',
+            date: '2025',
             description:
-                'Built an AI-powered education platform as part of a 36-hour national hackathon. Led a 6-member team to design, develop, and demo a production-ready Android and Web solution. Focused on real-time data handling, AI-driven insights, and scalability. Ranked among the top teams out of 140+ participants based on innovation, feasibility, and impact.',
+                'Selected as a Team Leader during the college-level internal hackathon for Smart India Hackathon (SIH) 2025. Led a 6-member team to design and pitch a structured solution for an AI-powered EdTech platform. Focused on problem analysis, system architecture, and feasibility. Ranked among the top 45 teams out of 140+ based on innovation, clarity of solution, and presentation quality.',
             technologies: [
                 'React',
                 'Android Studio',
@@ -25,11 +25,12 @@ const HackathonSection = () => {
                 'Java',
                 'XML'
             ],
-            link: 'https://github.com/Aakashch-code/EduLens-AI',
+            link: 'https://github.com/Aakashch-code/Learn-Quest',
             icon: Trophy,
-            badgeColor: 'from-yellow-400 to-orange-500'
+            badgeColor: 'from-blue-500 to-indigo-600'
         }
     ];
+
 
     const toggleAccordion = (id) => {
         setOpenItems((prev) => {

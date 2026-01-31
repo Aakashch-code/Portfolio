@@ -5,7 +5,7 @@ import HeroSection from "./componants/HeroSection.jsx";
 import StatsSection from "./componants/Stats.jsx";
 import AboutSection from "./componants/About.jsx";
 import SkillsSection from "./componants/Skills.jsx";
-import ExperienceSection from "./componants/Experience.jsx";
+import ExperienceSection from "./componants/Hackathons.jsx";
 import ProjectsSection from "./componants/Projects.jsx";
 import EducationSection from "./componants/Education.jsx";
 import CertificatesSection from "./componants/Certificates.jsx";
