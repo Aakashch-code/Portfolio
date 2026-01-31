@@ -8,33 +8,15 @@ const skillsData = [
             "Java",
             "Spring Boot",
             "Spring Security",
+            "Docker",
             "REST APIs",
             "Hibernate/JPA",
             "Maven"
         ]
     },
     {
-        category: "DevOps & Platform",
-        icon: "🚀",
-        technologies: [
-            "Oracle Cloud (OCI)",
-            "Docker",
-            "Render",
-            "Netlify"
-        ]
-    },
-    {
-        category: "Database",
-        icon: "🗄️",
-        technologies: [
-            "PostgreSQL",
-            "MySQL",
-            "MongoDB",
-        ]
-    },
-    {
         category: "Tools & Testing",
-        icon: "💻",
+        icon: "🔍",
         technologies: [
             "Git",
             "GitHub",
@@ -45,6 +27,27 @@ const skillsData = [
             "DataGrip"
         ]
     },
+    {
+        category: "Frontend Familiarity",
+        icon: "💻",
+        technologies: [
+            "React",
+            "JavaScript (ES6+)",
+            "Tailwind CSS",
+            "Component-based UI",
+            "API Integration",
+            "Basic State Management"
+        ]
+    },
+    {
+        category: "Database",
+        icon: "🗄️",
+        technologies: [
+            "PostgreSQL",
+            "MySQL",
+            "MongoDB",
+        ]
+    }
 ];
 
 // Parent container variant for staggering children

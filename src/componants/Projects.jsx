@@ -1,53 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom'; // <--- 1. Import this
-import { ExternalLink, X, Globe, Code, ArrowRight } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { X, Globe, Code, ArrowRight, Server, Layout, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
     {
         id: 1,
-        title: "Intelli Wealth Engine",
-        category: "Financial Data API",
+        title: "Intelli Wealth",
+        category: "Modular Monolith Financial Platform",
         description: [
-            "Engineered a high-throughput Spring Boot backend with JWT authentication, ensuring secure data transmission for sensitive financial records.",
-            "Designed a complex relational database schema in PostgreSQL to handle multi-layered user data, transaction history, and tax calculations.",
-            "Developed RESTful endpoints integrating AI-based analytics to deliver real-time spending forecasts and behavioral insights.",
-            "Optimized database queries and implemented Docker containerization to ensure consistent deployment across environments."
+            "Architected a modular monolith backend with feature-based modules (Treasury, Wealth, Protection) and clean separation across API, application, domain, and persistence layers.",
+            "Implemented 45+ REST APIs for transactions, budgeting, goal tracking, assets, liabilities, insurance, net worth, and contingency planning.",
+            "Used polyglot persistence with PostgreSQL for transactional integrity and MongoDB for flexible financial summaries and asset aggregation.",
+            "Built a contingency analysis engine calculating monthly burn rate, liquid coverage, runway duration, and recommended savings gaps.",
+            "Secured APIs using Spring Security and JWT-based stateless authentication with role-based access control.",
+            "Integrated a local, privacy-first LLM (Ollama) to generate on-device financial insights without external data exposure.",
+            "Dockerized the backend and exposed APIs via Swagger UI; added a lightweight React UI to visualize API behavior end-to-end."
         ],
-        tech: ["Java Spring Boot", "PostgreSQL", "Docker", "Spring Security"],
+        tech: ["Java 21", "Spring Boot 3", "Spring Security", "JWT", "PostgreSQL", "MongoDB", "Docker", "Ollama","Swagger UI","React","Tailwind CSS"],
         image: "📊",
-        link: null,
-        demoLink: null
+        demoLink: "https://intelli-wealth-ui.netlify.app/",
+        swaggerLink: "https://intelliwealth-api.onrender.com/swagger-ui/index.html#",
+        backendLink: "https://github.com/Aakashch-code/intelliwealth-api",
+        frontendLink: "https://github.com/Aakashch-code/intelli-wealth-ui",
+        link: null
     },
     {
         id: 2,
         title: "Learn Quest",
-        category: "Serverless Architecture",
+        category: "AI-Driven Learning Backend",
         description: [
-            "Architected a scalable serverless backend using Firebase Cloud Functions to orchestrate logic without managing infrastructure.",
-            "Implemented Cloud Firestore NoSQL database for millisecond-latency real-time data synchronization across client devices.",
-            "Integrated Firebase Authentication to manage secure user sessions and role-based access control (RBAC).",
-            "Built a responsive React frontend that acts as a dynamic consumer of the serverless backend events."
+            "Built an AI-driven backend that parses user-uploaded documents using the Gemini API to generate dynamic flashcards and practice tests.",
+            "Designed and implemented backend APIs and processing workflows to transform unstructured content into structured learning artifacts.",
+            "Developed a structured Skill Guide chatbot logic to recommend career roadmaps based on user goals and curated market data."
         ],
-        tech: ["Firebase Cloud Functions", "NoSQL Firestore", "React", "Android Studio"],
+        tech: ["Java", "Gemini API", "Firebase", "Backend API"],
         image: "🤖",
-        link: "https://github.com/Aakashch-code/EduLens-AI",
+        link: "https://github.com/Aakashch-code/Learn-Quest",
         demoLink: null
-    },
-    {
-        id: 3,
-        title: "Subscription Manager",
-        category: "Automated System",
-        description: [
-            "Developed a Spring Boot backend that automates billing alerts and payment reminders.",
-            "Built a centralized API aggregation layer to track recurring payments and display monthly cash flow insights.",
-            "Implemented a structured PostgreSQL schema handling many-to-many relationships between users, services, and billing cycles.",
-            "Developed a React dashboard integrated with REST APIs to show real-time analytics on spending patterns."
-        ],
-        tech: ["Spring Boot", "PostgreSQL", "React"],
-        image: "🎟️",
-        link: "https://github.com/Aakashch-code/Subscription-Manager",
-        demoLink: "https://subscriptionmanagerbyak.netlify.app/"
     }
 ];
 
@@ -94,6 +84,17 @@ export default function ProjectsSection() {
 
     return (
         <section className="py-24 px-6 relative z-10">
+            {/* INJECTED CSS TO HIDE SCROLLBAR */}
+            <style>{`
+                .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                .hide-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            `}</style>
+
             <div className="max-w-7xl mx-auto relative">
                 <div className="flex flex-col items-center justify-center text-center mb-16">
                     <motion.h2
@@ -120,7 +121,7 @@ export default function ProjectsSection() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{once: true, margin: "-50px"}}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
                 >
                     {projects.map((project) => (
                         <motion.div
@@ -187,8 +188,6 @@ export default function ProjectsSection() {
                 </motion.div>
             </div>
 
-            {/* --- PORTAL FIX START --- */}
-            {/* This transports the modal outside the Section and into the Body */}
             {mounted && createPortal(
                 <AnimatePresence>
                     {selectedProject && (
@@ -203,7 +202,8 @@ export default function ProjectsSection() {
                                 initial={{opacity: 0, scale: 0.95, y: 20}}
                                 animate={{opacity: 1, scale: 1, y: 0}}
                                 exit={{opacity: 0, scale: 0.95, y: 20}}
-                                className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-zinc-900 rounded-3xl border border-zinc-700 shadow-2xl shadow-purple-500/20 flex flex-col"
+                                // ADDED "hide-scrollbar" class here
+                                className="hide-scrollbar relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-zinc-900 rounded-3xl border border-zinc-700 shadow-2xl shadow-purple-500/20 flex flex-col"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <div
@@ -257,6 +257,8 @@ export default function ProjectsSection() {
 
                                 <div className="p-6 border-t border-zinc-800 bg-zinc-900/50 mt-auto">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                                        {/* Demo Button */}
                                         {selectedProject.demoLink ? (
                                             <a href={selectedProject.demoLink} target="_blank" rel="noopener noreferrer"
                                                className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold transition-all">
@@ -268,10 +270,36 @@ export default function ProjectsSection() {
                                                 <Globe size={18}/> Demo Offline
                                             </button>
                                         )}
-                                        <a href={selectedProject.link} target="_blank" rel="noopener noreferrer"
-                                           className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold border border-zinc-700 transition-all">
-                                            <Code size={18}/> View Source
-                                        </a>
+
+                                        {/* Swagger Button */}
+                                        {selectedProject.swaggerLink && (
+                                            <a href={selectedProject.swaggerLink} target="_blank" rel="noopener noreferrer"
+                                               className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 text-blue-300 hover:text-blue-200 font-semibold border border-blue-500/30 transition-all">
+                                                <BookOpen size={18}/> API Docs
+                                            </a>
+                                        )}
+
+                                        {/* Repo Buttons */}
+                                        {selectedProject.backendLink && (
+                                            <a href={selectedProject.backendLink} target="_blank" rel="noopener noreferrer"
+                                               className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold border border-zinc-700 transition-all">
+                                                <Server size={18}/> Backend Repo
+                                            </a>
+                                        )}
+                                        {selectedProject.frontendLink && (
+                                            <a href={selectedProject.frontendLink} target="_blank" rel="noopener noreferrer"
+                                               className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold border border-zinc-700 transition-all">
+                                                <Layout size={18}/> Frontend Repo
+                                            </a>
+                                        )}
+
+                                        {/* Fallback */}
+                                        {!selectedProject.backendLink && !selectedProject.frontendLink && selectedProject.link && (
+                                            <a href={selectedProject.link} target="_blank" rel="noopener noreferrer"
+                                               className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-semibold border border-zinc-700 transition-all">
+                                                <Code size={18}/> View Source
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </motion.div>
@@ -280,7 +308,6 @@ export default function ProjectsSection() {
                 </AnimatePresence>,
                 document.body
             )}
-            {/* --- PORTAL FIX END --- */}
         </section>
     );
 }
