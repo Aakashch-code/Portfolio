@@ -190,7 +190,6 @@ const HeroSection = () => {
     );
 };
 
-// Sub-component for Social Links to keep main clear
 const SocialLink = ({ href, icon, label }) => (
     <a
         href={href}

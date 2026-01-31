@@ -29,7 +29,8 @@ const EducationSection = () => {
     const IconComponent = degree.icon;
 
     return (
-        <section className="relative py-20 px-6 z-10">
+        <section id="education"
+                 className="relative py-20 px-6 z-10">
             <div className="relative container mx-auto max-w-5xl">
                 {/* Section Header */}
                 <div className="text-center mb-16">
