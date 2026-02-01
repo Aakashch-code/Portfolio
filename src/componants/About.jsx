@@ -8,7 +8,7 @@ const AboutSection = () => {
                     <div className="flex flex-col md:flex-row items-center gap-10">
                         <div className="w-48 h-48 rounded-2xl bg-zinc-800 overflow-hidden shrink-0 border border-zinc-700/50">
                             <img
-                                src="/pfp.jpg"
+                                src="/pfp.png"
                                 alt="Aakash Chauhan"
                                 className="w-full h-full object-cover"
                             />
