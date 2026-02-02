@@ -23,7 +23,6 @@ const skillsData = [
             "Postman",
             "JUnit",
             "Mockito",
-            "IntelliJ IDEA",
             "DataGrip"
         ]
     },
