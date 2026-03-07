@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from "./componants/Background.jsx";
+import Background from "./componants/ui/Background.jsx";
 import Navbar from "./componants/Navbar.jsx";
 import HeroSection from "./componants/HeroSection.jsx";
 import StatsSection from "./componants/Stats.jsx";

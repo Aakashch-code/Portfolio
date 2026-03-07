@@ -25,7 +25,7 @@ const HeroSection = () => {
     const fullLog = [
         "> initializing_profile...",
         "> loading_modules: [Spring Boot, Java, Docker]",
-        "> architecture: Microservices",
+        "> architecture: Monolithic",
         "> system_status: STABLE",
         "> executing: build_scalable_systems()",
         "> user_identity: Aakash_Chauhan",
@@ -111,7 +111,7 @@ const HeroSection = () => {
                     </h1>
 
                     <p className="text-xl text-zinc-400 mb-8 max-w-lg leading-relaxed">
-                        Architecting the logic behind the screen. I build scalable <span className="text-zinc-200 font-semibold">Spring Boot</span> microservices and robust database systems that power seamless user experiences.
+                        Architecting the logic behind the screen. I build <span className="text-zinc-200 font-semibold">Spring Boot</span> monolithic and robust database systems that power seamless user experiences.
                     </p>
 
                     {/* Primary Actions */}

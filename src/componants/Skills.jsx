@@ -8,43 +8,44 @@ const skillsData = [
             "Java",
             "Spring Boot",
             "Spring Security",
+            "Docker",
             "REST APIs",
             "Hibernate/JPA",
             "Maven"
         ]
     },
     {
-        category: "DevOps & Platform",
-        icon: "🚀",
+        category: "Frontend Familiarity",
+        icon: "💻",
         technologies: [
-            "Oracle Cloud (OCI)",
-            "Docker",
-            "Render",
-            "Netlify"
+            "React",
+            "JavaScript (ES6+)",
+            "Tailwind CSS",
+            "Component-based UI",
+            "API Integration",
+            "Basic State Management"
         ]
     },
+    {
+        category: "Tools & Testing",
+        icon: "🔍",
+        technologies: [
+            "Git",
+            "GitHub",
+            "Postman",
+            "IntelliJ IDEA",
+            "DataGrip"
+        ]
+    },
+
     {
         category: "Database",
         icon: "🗄️",
         technologies: [
             "PostgreSQL",
-            "MySQL",
             "MongoDB",
         ]
-    },
-    {
-        category: "Tools & Testing",
-        icon: "💻",
-        technologies: [
-            "Git",
-            "GitHub",
-            "Postman",
-            "JUnit",
-            "Mockito",
-            "IntelliJ IDEA",
-            "DataGrip"
-        ]
-    },
+    }
 ];
 
 // Parent container variant for staggering children
