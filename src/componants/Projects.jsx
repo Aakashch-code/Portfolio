@@ -9,13 +9,13 @@ const projects = [
         title: "Intelli Wealth",
         category: "Modular Monolith Financial Platform",
         description: [
-            "Architected a modular monolith backend with feature-based modules (Treasury, Wealth, Protection) and clean separation across API, application, domain, and persistence layers.",
-            "Implemented 45+ REST APIs for transactions, budgeting, goal tracking, assets, liabilities, insurance, net worth, and contingency planning.",
-            "Used polyglot persistence with PostgreSQL for transactional integrity and MongoDB for flexible financial summaries and asset aggregation.",
-            "Built a contingency analysis engine calculating monthly burn rate, liquid coverage, runway duration, and recommended savings gaps.",
+            "Built a modular monolith backend using Java 21 and Spring Boot with feature-based modules (Treasury, Wealth, Protection) and clean separation across API, application, domain, and persistence layers.",
+            "Implemented 45+ REST APIs for transactions, budgeting, goal tracking, assets, liabilities, insurance, net worth tracking, and contingency planning.",
+            "Used polyglot persistence with PostgreSQL for transactional data and MongoDB for flexible financial summaries and asset aggregation.",
+            "Developed a contingency analysis engine to calculate monthly burn rate, liquid asset coverage, financial runway, and recommended savings gaps.",
             "Secured APIs using Spring Security and JWT-based stateless authentication with role-based access control.",
-            "Integrated a local, privacy-first LLM (Ollama) to generate on-device financial insights without external data exposure.",
-            "Dockerized the backend and exposed APIs via Swagger UI; added a lightweight React UI to visualize API behavior end-to-end."
+            "Integrated the Google Gemini API to generate AI-powered financial insights and summaries from aggregated financial data.",
+            "Dockerized the backend, exposed APIs via Swagger UI, and built a lightweight React interface to visualize and test end-to-end workflows."
         ],
         tech: ["Java 21", "Spring Boot 3", "Spring Security", "JWT", "PostgreSQL", "MongoDB", "Docker", "Ollama","Swagger UI","React","Tailwind CSS"],
         image: "📊",
