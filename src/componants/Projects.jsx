@@ -8,14 +8,14 @@ const projects = [
         id: 1,
         title: "Intelli Wealth",
         category: "Modular Monolith Financial Platform",
-        description: [
-            "Architected a modular monolith backend with feature-based modules (Treasury, Wealth, Protection) and clean separation across API, application, domain, and persistence layers.",
-            "Implemented 45+ REST APIs for transactions, budgeting, goal tracking, assets, liabilities, insurance, net worth, and contingency planning.",
-            "Used polyglot persistence with PostgreSQL for transactional integrity and MongoDB for flexible financial summaries and asset aggregation.",
-            "Built a contingency analysis engine calculating monthly burn rate, liquid coverage, runway duration, and recommended savings gaps.",
-            "Secured APIs using Spring Security and JWT-based stateless authentication with role-based access control.",
-            "Integrated a local, privacy-first LLM (Ollama) to generate on-device financial insights without external data exposure.",
-            "Dockerized the backend and exposed APIs via Swagger UI; added a lightweight React UI to visualize API behavior end-to-end."
+        description:[
+            "Architected a modular monolith with full vertical slices per domain — Treasury (budgets, transactions, goals, subscriptions), Wealth (assets, liabilities, net worth), Protection (insurance, emergency fund, contingency) — each following a strict API -> Application -> Domain -> Persistence layered pattern.",
+            "Designed and implemented 45+ RESTful endpoints with clear resource boundaries, consistent response contracts, Swagger/OpenAPI docs, and input validation.",
+            "Integrated Redis caching on high-frequency aggregation endpoints, reducing API response times from 400-500 ms to 20-25 ms — a 20x performance improvement.",
+            "Built a Contingency Analysis engine aggregating user data to compute monthly burn rate, liquid asset coverage, financial runway, and recommended savings gap via a dedicated analytical endpoint.",
+            "Implemented polyglot persistence: PostgreSQL for ACID-critical transactional and user data; MongoDB for flexible financial summaries, asset records, and AI response storage.",
+            "Engineered stateless JWT authentication with Spring Security 6, RBAC, BCrypt password hashing, token refresh flow, and a custom security filter chain.",
+            "Integrated Google Gemini API for AI-powered spending analysis, debt strategy recommendations, and personalised financial summaries; optimised response payloads with Jackson null-field filtering."
         ],
         tech: ["Java 21", "Spring Boot 3", "Spring Security", "JWT", "PostgreSQL", "MongoDB", "Docker", "Ollama","Swagger UI","React","Tailwind CSS"],
         image: "📊",
@@ -26,7 +26,33 @@ const projects = [
         link: null
     },
     {
-        id: 2,
+        "id": 2,
+        "title": "Zairo",
+        "category": "Role-based Financial Workspace API",
+        "description": [
+            "Built a role-based financial workspace REST API with 4 granular roles — Viewer, Analyst, Admin, Organizer — enforcing fine-grained access control over read, write, and export operations.",
+            "Designed 15+ endpoints covering paginated transaction management, date/category/amount filtering, income-vs-expense net position aggregation, and PDF report export.",
+            "Implemented stateless JWT authentication with Spring Security; schema auto-provisioned via Hibernate against a serverless Neon PostgreSQL database.",
+            "Documented all endpoints via Swagger / OpenAPI 3, enabling token-authenticated interactive testing directly from the browser."
+        ],
+        "tech": [
+            "Java 21",
+            "Spring Boot 3",
+            "Spring Security",
+            "JWT",
+            "PostgreSQL",
+            "Neon",
+            "Swagger"
+        ],
+        "image": "💼",
+        "demoLink": null,
+        "swaggerLink": null,
+        "backendLink": "https://github.com/Aakashch-code/zairo-api",
+        "frontendLink": null,
+        "link": null
+    },
+    {
+        id: 3,
         title: "Learn Quest",
         category: "AI-Driven Learning Backend",
         description: [
@@ -121,7 +147,7 @@ export default function ProjectsSection() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{once: true, margin: "-50px"}}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
                 >
                     {projects.map((project) => (
                         <motion.div
