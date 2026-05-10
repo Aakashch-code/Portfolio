@@ -20,9 +20,7 @@ const skillsData = [
         technologies: [
             "Git",
             "GitHub",
-            "Postman",
-            "JUnit",
-            "Mockito",
+            "Postman", ,
             "DataGrip"
         ]
     },

@@ -25,7 +25,7 @@ const HeroSection = () => {
     const fullLog = [
         "> initializing_profile...",
         "> loading_modules: [Spring Boot, Java, Docker]",
-        "> architecture: Modular Monolith",
+        "> architecture: Microservices",
         "> system_status: STABLE",
         "> executing: build_scalable_systems()",
         "> user_identity: Aakash_Chauhan",
