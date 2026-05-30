@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const stats = [
     {
         label: "API Endpoints",
-        value: "45+",
+        value: "55+",
         desc: "RESTful Architecture",
         icon: Server,
     },

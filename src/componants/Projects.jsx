@@ -7,18 +7,30 @@ const projects = [
     {
         id: 1,
         title: "Intelli Wealth",
-        category: "Modular Monolith Financial Platform",
-        description:[
-            "Architected a modular monolith with full vertical slices per domain — Treasury (budgets, transactions, goals, subscriptions), Wealth (assets, liabilities, net worth), Protection (insurance, emergency fund, contingency) — each following a strict API -> Application -> Domain -> Persistence layered pattern.",
-            "Designed and implemented 45+ RESTful endpoints with clear resource boundaries, consistent response contracts, Swagger/OpenAPI docs, and input validation.",
-            "Integrated Redis caching on high-frequency aggregation endpoints, reducing API response times from 400-500 ms to 20-25 ms — a 20x performance improvement.",
-            "Built a Contingency Analysis engine aggregating user data to compute monthly burn rate, liquid asset coverage, financial runway, and recommended savings gap via a dedicated analytical endpoint.",
-            "Implemented polyglot persistence: PostgreSQL for ACID-critical transactional and user data; MongoDB for flexible financial summaries, asset records, and AI response storage.",
-            "Engineered stateless JWT authentication with Spring Security 6, RBAC, BCrypt password hashing, token refresh flow, and a custom security filter chain.",
-            "Integrated Google Gemini API for AI-powered spending analysis, debt strategy recommendations, and personalised financial summaries; optimised response payloads with Jackson null-field filtering."
+        category: "Modular Monolith Smart Finance Manager Platform",
+        description: [
+            "Initiated research and architectural planning in July 2025, developing a modular monolith backend that manages transactions, assets, and net worth across Treasury, Wealth, and Protection domains.",
+            "Engineered 55+ RESTful endpoints utilizing polyglot persistence (PostgreSQL, MongoDB) and Redis caching, slashing API response times by 20x (400ms to 20ms).",
+            "Built contingency and AI-insight APIs via Google Gemini to calculate financial runway and generate personalized debt strategies.",
+            "Secured data transmission and API access using Spring Security 6, stateless JWT authentication, and Role-Based Access Control (RBAC).",
+            "Developed a lightweight React and Tailwind CSS frontend to interactively test and visualize backend system logic."
         ],
-        tech: ["Java 21", "Spring Boot 3", "Spring Security", "JWT", "PostgreSQL", "MongoDB", "Docker", "Ollama","Swagger UI","React","Tailwind CSS"],
-        image: "📊",
+        tech: [
+            "Java 21",
+            "Spring Boot 3",
+            "Spring Security",
+            "Redis",
+            "JWT",
+            "PostgreSQL",
+            "MongoDB",
+            "Docker",
+            "Google Gemini API",
+            "Swagger UI",
+            "React",
+            "Tailwind CSS"
+        ],
+        // Updated path: drop the /public/ prefix
+        image: "/logo.png",
         demoLink: "https://intelli-wealth-ui.netlify.app/",
         swaggerLink: "https://intelliwealth-api.onrender.com/swagger-ui/index.html#",
         backendLink: "https://github.com/Aakashch-code/intelliwealth-api",
@@ -26,16 +38,16 @@ const projects = [
         link: null
     },
     {
-        "id": 2,
-        "title": "Zairo",
-        "category": "Role-based Financial Workspace API",
-        "description": [
+        id: 2,
+        title: "Zairo",
+        category: "Role-based Financial Workspace API",
+        description: [
             "Built a role-based financial workspace REST API with 4 granular roles — Viewer, Analyst, Admin, Organizer — enforcing fine-grained access control over read, write, and export operations.",
             "Designed 15+ endpoints covering paginated transaction management, date/category/amount filtering, income-vs-expense net position aggregation, and PDF report export.",
             "Implemented stateless JWT authentication with Spring Security; schema auto-provisioned via Hibernate against a serverless Neon PostgreSQL database.",
             "Documented all endpoints via Swagger / OpenAPI 3, enabling token-authenticated interactive testing directly from the browser."
         ],
-        "tech": [
+        tech: [
             "Java 21",
             "Spring Boot 3",
             "Spring Security",
@@ -44,12 +56,12 @@ const projects = [
             "Neon",
             "Swagger"
         ],
-        "image": "💼",
-        "demoLink": null,
-        "swaggerLink": null,
-        "backendLink": "https://github.com/Aakashch-code/zairo-api",
-        "frontendLink": null,
-        "link": null
+        image: "💼",
+        demoLink: null,
+        swaggerLink: null,
+        backendLink: "https://github.com/Aakashch-code/zairo-api",
+        frontendLink: null,
+        link: null
     },
     {
         id: 3,
@@ -107,6 +119,14 @@ export default function ProjectsSection() {
         window.addEventListener('keydown', handleEsc);
         return () => window.removeEventListener('keydown', handleEsc);
     }, []);
+
+    // Helper function to render image or emoji
+    const renderIcon = (imagePath, sizeClass = "w-10 h-10") => {
+        if (imagePath.startsWith('/')) {
+            return <img src={imagePath} alt="Project Logo" className={`${sizeClass} object-contain`} />;
+        }
+        return <span>{imagePath}</span>;
+    };
 
     return (
         <section className="py-24 px-6 relative z-10">
@@ -167,9 +187,10 @@ export default function ProjectsSection() {
 
                             <div className="relative z-10 flex-1 flex flex-col">
                                 <div className="flex items-start justify-between mb-6">
+                                    {/* Updated rendering here */}
                                     <div
-                                        className="relative text-4xl p-3 bg-zinc-800/50 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500">
-                                        {project.image}
+                                        className="relative text-4xl p-3 bg-zinc-800/50 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+                                        {renderIcon(project.image, "w-10 h-10")}
                                     </div>
                                     <div
                                         className="p-2 rounded-xl bg-zinc-800/50 border border-zinc-700/50 group-hover:bg-zinc-700 group-hover:text-white text-zinc-400 transition-colors">
@@ -228,14 +249,16 @@ export default function ProjectsSection() {
                                 initial={{opacity: 0, scale: 0.95, y: 20}}
                                 animate={{opacity: 1, scale: 1, y: 0}}
                                 exit={{opacity: 0, scale: 0.95, y: 20}}
-                                // ADDED "hide-scrollbar" class here
                                 className="hide-scrollbar relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-zinc-900 rounded-3xl border border-zinc-700 shadow-2xl shadow-purple-500/20 flex flex-col"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <div
                                     className="sticky top-0 z-10 flex items-center justify-between p-6 bg-zinc-900/95 backdrop-blur border-b border-zinc-800">
                                     <div className="flex items-center gap-4">
-                                        <div className="text-4xl">{selectedProject.image}</div>
+                                        {/* Updated modal rendering here */}
+                                        <div className="text-4xl flex items-center justify-center">
+                                            {renderIcon(selectedProject.image, "w-12 h-12")}
+                                        </div>
                                         <div>
                                             <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
                                             <p className="text-purple-400 text-sm font-medium">{selectedProject.category}</p>

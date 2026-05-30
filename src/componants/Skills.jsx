@@ -15,16 +15,6 @@ const skillsData = [
         ]
     },
     {
-        category: "Tools & Testing",
-        icon: "🔍",
-        technologies: [
-            "Git",
-            "GitHub",
-            "Postman", ,
-            "DataGrip"
-        ]
-    },
-    {
         category: "Frontend Familiarity",
         icon: "💻",
         technologies: [
@@ -36,6 +26,17 @@ const skillsData = [
             "Basic State Management"
         ]
     },
+    {
+        category: "Tools & Testing",
+        icon: "🔍",
+        technologies: [
+            "Git",
+            "GitHub",
+            "Postman", ,
+            "DataGrip"
+        ]
+    },
+
     {
         category: "Database",
         icon: "🗄️",

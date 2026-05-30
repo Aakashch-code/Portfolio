@@ -21,14 +21,10 @@ const AboutSection = () => {
 
                             <div className="text-zinc-400 space-y-4 max-w-2xl">
                                 <p>
-                                    I'm a backend-focused developer working primarily with
-                                    Java 21 and Spring Boot 3, with hands-on experience building
-                                    complex backend systems and REST APIs.
+                                    I’m a third-year student with solid, project-based experience in backend development using the Spring ecosystem. I genuinely enjoy handling the logic behind the screen—building clean APIs and structuring reliable service layers.
                                 </p>
                                 <p>
-                                    I’m comfortable across the full stack when needed — using
-                                    React for basic frontend flows — but my main focus is
-                                    designing clean, secure, and scalable backend architectures.
+                                    Lately, I've been exploring Generative AI by integrating tools like Gemini and Ollama into my personal builds. While my primary focus is the backend, I can comfortably spin up lightweight frontends using React and Tailwind CSS to bring my APIs to life.
                                 </p>
                             </div>
 

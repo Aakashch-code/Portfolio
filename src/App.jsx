@@ -23,12 +23,12 @@ export default function App() {
                 <StatsSection />
                 <AboutSection />
                 <SkillsSection />
-                <ExperienceSection />
                 <div id="projects" className="scroll-mt-20">
-                    <ProjectsSection />
+                <ProjectsSection />
                 </div>
-                <EducationSection />
                 <CertificatesSection />
+                <ExperienceSection />
+                <EducationSection />
                 <ContactSection />
             </main>
 
