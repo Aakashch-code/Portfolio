@@ -9,11 +9,11 @@ const projects = [
         title: "Intelli Wealth",
         category: "Modular Monolith Smart Finance Manager Platform",
         description: [
-            "Initiated research and architectural planning in July 2025, developing a modular monolith backend that manages transactions, assets, and net worth across Treasury, Wealth, and Protection domains.",
-            "Engineered 55+ RESTful endpoints utilizing polyglot persistence (PostgreSQL, MongoDB) and Redis caching, slashing API response times by 20x (400ms to 20ms).",
-            "Built contingency and AI-insight APIs via Google Gemini to calculate financial runway and generate personalized debt strategies.",
-            "Secured data transmission and API access using Spring Security 6, stateless JWT authentication, and Role-Based Access Control (RBAC).",
-            "Developed a lightweight React and Tailwind CSS frontend to interactively test and visualize backend system logic."
+            "Architected a modular monolith backend with 55+ RESTful endpoints, orchestrating complex financial domains including subscription management, treasury operations, and debt tracking.",
+            "Engineered core financial logic for debt amortization, EMI management, and contingency planning, enabling real-time liability tracking and runway analysis based on user cash flow.",
+            "Optimized data retrieval using polyglot persistence (PostgreSQL, MongoDB) and Redis caching, achieving a 2.5x reduction in API latency for complex financial queries.",
+            "Integrated the Google Gemini API to power a context-aware financial assistant, generating personalized debt repayment strategies and runway insights based on live user data.",
+            "Secured the ecosystem with Spring Security 6, stateless JWT, and granular RBAC, while developing a lightweight React/Tailwind frontend to visualize and test backend workflows."
         ],
         tech: [
             "Java 21",
