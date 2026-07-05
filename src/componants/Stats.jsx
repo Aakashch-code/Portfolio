@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const stats = [
     {
         label: "Prod Performance",
-        value: "60%↓",
+        value: "2.5x",
         desc: "Latency Drop via Redis",
         icon: Activity,
     },
