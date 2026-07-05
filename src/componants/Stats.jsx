@@ -1,25 +1,25 @@
 import React from 'react';
-import { Shield, Server, Database } from 'lucide-react';
+import {Shield, Server, Database, Activity, Layers, BrainCircuit} from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const stats = [
     {
-        label: "API Endpoints",
-        value: "55+",
-        desc: "RESTful Architecture",
-        icon: Server,
+        label: "Prod Performance",
+        value: "60%↓",
+        desc: "Latency Drop via Redis",
+        icon: Activity,
+    },
+    {
+        label: "AI Integration",
+        value: "GenAI",
+        desc: "Gemini API & Ollama Workflows",
+        icon: BrainCircuit,
     },
     {
         label: "Security Protocol",
         value: "JWT + RBAC",
         desc: "Stateless Auth",
         icon: Shield,
-    },
-    {
-        label: "Data Engineering",
-        value: "Polyglot",
-        desc: "Postgres & MongoDB",
-        icon: Database,
     }
 ];
 

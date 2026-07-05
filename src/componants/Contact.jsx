@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Clock } from 'lucide-react';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +9,21 @@ const ContactSection = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitMessage, setSubmitMessage] = useState('');
+    const [elapsedTime, setElapsedTime] = useState(0);
+
+    // Timer to show users that the system is actively waiting on the cold start
+    useEffect(() => {
+        let interval;
+        if (isSubmitting) {
+            interval = setInterval(() => {
+                setElapsedTime((prev) => prev + 1);
+            }, 1000);
+        } else {
+            setElapsedTime(0);
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [isSubmitting]);
 
     const handleFormChange = (e) => {
         const { name, value } = e.target;
@@ -33,7 +49,7 @@ const ContactSection = () => {
 
             if (response.ok) {
                 setSubmitMessage('Message sent successfully! I\'ll get back to you soon.');
-                setFormData({ name: '', email: '', message: '' }); // Reset form
+                setFormData({ name: '', email: '', message: '' });
             } else {
                 throw new Error('Failed to send message. Please try again.');
             }
@@ -59,6 +75,15 @@ const ContactSection = () => {
                     <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                     <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
+
+                        {/* Render Cold Start Notice */}
+                        <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-start gap-3">
+                            <Clock className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                            <p className="text-sm text-zinc-300 leading-relaxed">
+                                <strong className="text-blue-400 font-medium">Infrastructure Note:</strong> This form routes through a secure Spring Boot backend hosted on Render's free tier. If the server is asleep, it may take <strong className="text-zinc-100">30–50 seconds</strong> to spin up. I appreciate your patience!
+                            </p>
+                        </div>
+
                         {/* Name Input */}
                         <div className="group/input">
                             <label className="block text-sm font-semibold text-zinc-400 mb-3 uppercase tracking-wider flex items-center gap-2">
@@ -127,14 +152,26 @@ const ContactSection = () => {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="group/btn flex-1 relative px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0"
+                                className="group/btn flex-1 relative px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:-translate-y-1 disabled:opacity-80 disabled:cursor-wait disabled:translate-y-0"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700"></div>
                                 <span className="relative flex items-center justify-center gap-2">
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                                    <svg className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
+                                    {isSubmitting ? (
+                                        <>
+                                            <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                            Waking Server ({elapsedTime}s)...
+                                        </>
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <svg className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                            </svg>
+                                        </>
+                                    )}
                                 </span>
                             </button>
 
@@ -153,7 +190,7 @@ const ContactSection = () => {
 
                         {/* Feedback Message */}
                         {submitMessage && (
-                            <div className={`pt-4 text-center ${submitMessage.includes('successfully') ? 'text-green-400' : 'text-red-400'}`}>
+                            <div className={`pt-4 text-center font-medium ${submitMessage.includes('successfully') ? 'text-green-400' : 'text-red-400'}`}>
                                 {submitMessage}
                             </div>
                         )}
@@ -164,7 +201,7 @@ const ContactSection = () => {
                                 <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                 </svg>
-                                <span>Fast Response</span>
+                                <span>RESTful Integration</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">

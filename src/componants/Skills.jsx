@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Server, Monitor, Wrench, Database } from 'lucide-react';
+
 const skillsData = [
     {
         category: "Backend Development",
-        icon: "⚙️",
+        icon: Server,
         technologies: [
             "Java",
             "Spring Boot",
@@ -16,7 +18,7 @@ const skillsData = [
     },
     {
         category: "Frontend Familiarity",
-        icon: "💻",
+        icon: Monitor,
         technologies: [
             "React",
             "JavaScript (ES6+)",
@@ -28,18 +30,17 @@ const skillsData = [
     },
     {
         category: "Tools & Testing",
-        icon: "🔍",
+        icon: Wrench,
         technologies: [
             "Git",
             "GitHub",
-            "Postman", ,
+            "Postman",
             "DataGrip"
         ]
     },
-
     {
         category: "Database",
-        icon: "🗄️",
+        icon: Database,
         technologies: [
             "PostgreSQL",
             "MySQL",
@@ -103,57 +104,56 @@ export default function SkillsSection({ skills = skillsData }) {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }} // Triggers animation slightly before element hits view
+                    viewport={{ once: true, margin: "-100px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
-                    {skills.map((skill, index) => (
-                        <motion.div
-                            key={index}
-                            variants={cardVariants}
-                            whileHover={{ y: -5, transition: { duration: 0.3 } }} // Subtle lift on hover
-                            whileTap={{ scale: 0.98 }} // Tactile feedback on click/touch
-                            className="group relative p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 hover:border-zinc-700/70 transition-colors duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
-                        >
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
+                    {skills.map((skill, index) => {
+                        const Icon = skill.icon;
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={cardVariants}
+                                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                                whileTap={{ scale: 0.98 }}
+                                className="group relative p-6 rounded-2xl bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 hover:border-zinc-700/70 transition-colors duration-500 hover:shadow-2xl hover:shadow-purple-500/10"
+                            >
+                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-purple-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
 
-                            <div className="relative z-10">
-                                <div className="flex flex-col items-center text-center mb-6">
-                                    <div className="relative mb-4">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                                        <span
-                                            className="relative text-5xl transform group-hover:scale-110 transition-transform duration-500 inline-block"
-                                            role="img"
-                                            aria-label={`${skill.category} icon`}
-                                        >
-                                            {skill.icon}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors duration-300">
-                                        {skill.category}
-                                    </h3>
-                                </div>
-
-                                <div className="space-y-2.5">
-                                    {skill.technologies.map((tech, i) => (
-                                        <div key={i} className="relative group/tech">
-                                            <div className="relative px-4 py-2 rounded-lg bg-zinc-800/40 border border-zinc-700/30 group-hover/tech:border-purple-500/50 transition-all duration-300 overflow-hidden">
-                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover/tech:translate-x-[200%] transition-transform duration-700"></div>
-                                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover/tech:from-purple-500/10 group-hover/tech:to-blue-500/10 transition-all duration-300"></div>
-                                                <div className="relative flex items-center justify-center gap-2">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover/tech:opacity-100 transition-all duration-300 group-hover/tech:shadow-lg group-hover/tech:shadow-purple-500/50"></span>
-                                                    <span className="text-sm font-medium text-zinc-300 group-hover/tech:text-transparent group-hover/tech:bg-gradient-to-r group-hover/tech:from-purple-400 group-hover/tech:to-blue-400 group-hover/tech:bg-clip-text transition-all duration-300">
-                                                        {tech}
-                                                    </span>
-                                                </div>
+                                <div className="relative z-10">
+                                    <div className="flex flex-col items-center text-center mb-6">
+                                        <div className="relative mb-4">
+                                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                                            <div className="relative text-zinc-400 group-hover:text-purple-400 transform group-hover:scale-110 transition-all duration-500 inline-block">
+                                                <Icon size={48} strokeWidth={1.5} />
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
+                                        <h3 className="text-xl font-semibold text-zinc-100 group-hover:text-white transition-colors duration-300">
+                                            {skill.category}
+                                        </h3>
+                                    </div>
 
-                            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </motion.div>
-                    ))}
+                                    <div className="space-y-2.5">
+                                        {skill.technologies.map((tech, i) => (
+                                            <div key={i} className="relative group/tech">
+                                                <div className="relative px-4 py-2 rounded-lg bg-zinc-800/40 border border-zinc-700/30 group-hover/tech:border-purple-500/50 transition-all duration-300 overflow-hidden">
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-200%] group-hover/tech:translate-x-[200%] transition-transform duration-700"></div>
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/0 to-blue-500/0 group-hover/tech:from-purple-500/10 group-hover/tech:to-blue-500/10 transition-all duration-300"></div>
+                                                    <div className="relative flex items-center justify-center gap-2">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover/tech:opacity-100 transition-all duration-300 group-hover/tech:shadow-lg group-hover/tech:shadow-purple-500/50"></span>
+                                                        <span className="text-sm font-medium text-zinc-300 group-hover/tech:text-transparent group-hover/tech:bg-gradient-to-r group-hover/tech:from-purple-400 group-hover/tech:to-blue-400 group-hover/tech:bg-clip-text transition-all duration-300">
+                                                            {tech}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </motion.div>
+                        );
+                    })}
                 </motion.div>
             </div>
         </section>

@@ -22,10 +22,10 @@ export default function App() {
                 <HeroSection />
                 <StatsSection />
                 <AboutSection />
-                <SkillsSection />
                 <div id="projects" className="scroll-mt-20">
                 <ProjectsSection />
                 </div>
+                <SkillsSection />
                 <CertificatesSection />
                 <ExperienceSection />
                 <EducationSection />
